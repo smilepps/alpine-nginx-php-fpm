@@ -28,7 +28,7 @@ case ${1} in
             -e "s#{{PHP_FPM_PROCESS_MANAGER_START_SERVERS}}#$PHP_FPM_PROCESS_MANAGER_START_SERVERS#g" \
             -e "s#{{PHP_FPM_PROCESS_MANAGER_MIN_SPARE_SERVERS}}#$PHP_FPM_PROCESS_MANAGER_MIN_SPARE_SERVERS#g" \
             -e "s#{{PHP_FPM_PROCESS_MANAGER_MAX_SPARE_SERVERS}}#$PHP_FPM_PROCESS_MANAGER_MAX_SPARE_SERVERS#g" \
-            > /etc/php5/php-fpm.conf
+            > /etc/php7/php-fpm.conf
 
         cat ${DOCKAGE_ETC_DIR}/runtime/configs/nginx/default.conf | \
         sed -e "s#{{NGINX_PORT}}#$NGINX_PORT#g" \
