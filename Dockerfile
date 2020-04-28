@@ -1,5 +1,5 @@
 FROM smileps/alpine-runit:latest
-RUN docker-php-ext-install pdo_pgsql
+RUN docker-php-ext-install pgsql
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
 LABEL org.label-schema.name="alpine-nginx-php-fpm" \
