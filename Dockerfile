@@ -1,4 +1,4 @@
-FROM dockage/alpine-runit:3.6
+FROM dockage/alpine-runit:3.10
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
 LABEL org.label-schema.name="alpine-nginx-php-fpm" \
@@ -15,13 +15,13 @@ ENV DOCKAGE_WEBROOT_DIR=/var/www \
 ADD ./assets ${DOCKAGE_ETC_DIR}
 
 RUN apk update \
-    && apk --no-cache add nginx php5-fpm \
+    && apk --no-cache add nginx php7-fpm \
     && runit-enable-service nginx \
     && runit-enable-service php-fpm \
     && chown nginx:nginx ${DOCKAGE_WEBROOT_DIR} \
     && mv ${DOCKAGE_ETC_DIR}/sbin/* /sbin \
     && rm -rf /var/cache/apk/* ${DOCKAGE_ETC_DIR}/sbin ${DOCKAGE_WEBROOT_DIR}/* \
-    && ln -s /usr/bin/php-fpm5 /usr/bin/php-fpm
+    && ln -s /usr/bin/php-fpm7 /usr/bin/php-fpm
 
 EXPOSE 80/tcp 443/tcp
 
