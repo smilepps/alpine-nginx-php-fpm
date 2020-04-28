@@ -1,4 +1,4 @@
-FROM dockage/alpine-runit:3.10
+FROM dockage/alpine-runit:latest
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
 LABEL org.label-schema.name="alpine-nginx-php-fpm" \
